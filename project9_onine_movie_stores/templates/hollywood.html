@@ -1,0 +1,64 @@
+{% extends 'movie.html' %}
+{% load static %}
+{% block movie %}
+<table align="center" >
+<tr>
+        <th>
+    <img src="{% static 'images/eng1.jpg' %}" width="150" height="200">
+        </th>
+        <th>
+    <img src="{% static 'images/eng2.jpg' %}" width="150" height="200">
+        </th>
+        <th>
+    <img src="{% static 'images/eng3.jpg' %}" width="150" height="200">
+        </th>
+</tr>
+
+<tr>
+
+    <th>
+                <a href="{% url 'playhollywood' %}?mno=1">
+               <img src="{% static 'images/youtube.png' %}" width="25" height="25">
+                 watch trailer
+                </a>
+
+    </th>
+
+    <th>
+                 <a href="{% url 'playhollywood' %}?mno=2">
+                 <img src="{% static 'images/youtube.png' %}" width="25" height="25">
+                 watch trailer
+                 </a>
+
+    </th>
+
+
+
+    <th>
+                 <a href="{% url 'playhollywood' %}?mno=3">
+                 <img src="{% static 'images/youtube.png' %}" width="25" height="25">
+                 watch trailer
+                 </a>
+
+    </th>
+</tr>
+
+<form action="{% url 'booking' %}" method="post">
+    {% csrf_token %}
+<tr align="center">
+        <th>
+            <button type="submit"> BOOK</button>
+        </th>
+        <th>
+            <button type="submit"> BOOK</button>
+        </th>
+        <th>
+            <button type="submit"> BOOK</button>
+        </th>
+</tr>
+</form>
+
+</table>
+
+{% endblock %}
+
